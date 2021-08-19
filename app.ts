@@ -4,7 +4,7 @@ const person: {
     name : string;
     age: number;
     hobbies : string[];
-    role: [Role, boolean];
+    role: [Role, boolean]; // tuple
 } = {
     name: "Sujay",
     age: 25,
@@ -26,3 +26,34 @@ for (const hobby of person.hobbies)
 {
     console.log(hobby.toLowerCase());
 }
+
+function combine(input1: number | string, input2: number | string){  
+    if(typeof input1 == 'number' && typeof input2 == 'number')
+        return input1 + input2;
+
+    return input1.toString() + input2.toString();
+}
+
+console.log(`Combined Numbers: ${combine(23, 27)} | Combined Name: ${combine("Wo", "omp")} | Mixed: ${combine("Woop", 5)}`);
+
+function printValue(num : number) : void{
+    console.log("Result is: " + num);
+}
+
+function add(num1 : number , num2 : number, callback: (num : number) => void){
+        const result = num1 + num2;
+
+		if(callback)
+			callback(result);            
+}
+
+let outputFunction: (a: number | string, b: number | string) => number | string;
+let outputVoid: (input: number) => void;
+
+
+outputFunction = combine;
+//outputVoid = printValue;
+
+console.log(add(6, 15, (result) => {
+	console.log("Final Result is " + result);
+}));
