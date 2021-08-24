@@ -19,7 +19,6 @@ const person  = {
     hobbies: [ 'MMA', "Gaming"]
 };
 */
-
 console.log(`${person.name} is ${person.age} years old with role of ${person.role[0]} and is active: ${person.role[1]}`);
 
 for (const hobby of person.hobbies) 
@@ -53,6 +52,8 @@ let outputVoid: (input: number) => void;
 
 outputFunction = combine;
 //outputVoid = printValue;
+
+console.log(outputFunction(4, 5));
 
 console.log(add(6, 15, (result) => {
 	console.log("Final Result is " + result);
